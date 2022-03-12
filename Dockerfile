@@ -6,6 +6,7 @@ RUN apk update && apk upgrade && apk add --update --no-cache \
   build-base \
   curl-dev \
   tzdata \
+  postgresql-dev \
   vim && rm -rf /var/cache/apk/*
 
 ARG SINATRA_ROOT=/usr/src/app/
@@ -25,6 +26,7 @@ ARG SINATRA_ROOT=/usr/src/app/
 RUN apk update && apk upgrade && apk add --update --no-cache \
   bash \
   tzdata \
+  postgresql-dev \
   vim && rm -rf /var/cache/apk/*
 
 WORKDIR $SINATRA_ROOT

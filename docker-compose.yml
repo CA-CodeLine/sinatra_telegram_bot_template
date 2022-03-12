@@ -1,6 +1,13 @@
 version: '3'
    
 services:
+  database:
+    image: 'postgres:12.3'
+    volumes:
+      - 'db_data:/var/lib/postgresql/data'
+    env_file:
+      - config/docker.env
+
   bot:
     build: .
     ports:
@@ -11,6 +18,8 @@ services:
       - LANG=C.UTF-8
     env_file:
       - config/docker.env
+    depends_on:
+      - 'database'
     stdin_open: true
     tty: true
 
