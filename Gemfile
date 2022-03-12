@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 
 ruby '3.0.3'
 
-gem 'csv'
 gem 'dotenv'
 gem 'i18n'
 gem 'puma'
