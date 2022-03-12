@@ -2,7 +2,11 @@
 
 require 'json'
 require 'telegram/bot'
+require 'sinatra/activerecord'
 
+require './config/database'
+
+require 'dotenv'
 Dotenv.load
 
 Dir['./initializers/*.rb'].sort.each { |file| require file }
